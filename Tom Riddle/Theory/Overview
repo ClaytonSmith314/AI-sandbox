@@ -1,0 +1,37 @@
+
+This is the playground for my AI research
+
+Basic premise: All information can be encoded, at least implicitly, as an arrangement of symbols.
+Computer use a set of one's and zero's to store information at the lowest level, but it is most useful to view
+the information stored on a computer as a STRING. A string is simply an arrangement of 'characters' from a beginning to
+end of an undefined length. Since strings have an indefinite number of configurations, they
+can hold an indefinite amount of information, and therefor can have an indefinably variable meaning.
+
+The goal here is to understand how to create a program that given information and time can build a system of strings
+and methods that will allow it to understand and respond to stimuli given to it in a proactive manner.
+I intend to prove that complex systems capable of understanding and manipulating other complex systems can be
+created on any machine that can produce 'strings' and 'methods'. I also intend to provide a set of virtual tools and
+concepts needed to build and understand such a system, and of course, to create such a system myself.
+
+This project is in all a work of science, a work of engineering, a work of art, and a work of philosophy.
+This may be one of the only things that can be all of these. I expect no less than that this idea, whether realized by
+myself or by someone else, will shake the world when realised. I must admit that such a though is one of the main
+ideas driving me to create this work. The very idea of it -that something so complex and dynamic can be created with
+the most ridged of tools- fascinates me and I can't help but finding the answer to this question. This may be my own
+version of Pandora's box, and it is by my curiosity that I have found out how to open it, but this idea makes me even
+more driven to get it open. To leave it unopened would leave me with a idea unresolved, and a truth -for this would
+only be a reveling of truth- lain dormant left to be discovered some other time.
+
+These are the ideas that contextualise the building of this project. I just want to spend a little more time to explain
+my choice of programming language and title for the project. I originally wanted to do this project in Java. Java is
+a good language, especially for staying organized and understanding the importance data has in the code, but it lacked
+the flexibility needed to do this project well. The main reason why I chose Java first was because I knew it. That's
+the language I learned in school, and so it made sense to start with what I knew. But as I thought about it more, I
+realized that python was the more logical choice. The twin project to "Tom Riddle", one I'm working on with a good
+friend of mine, is to 3-D print a small bi-pedal robot, dubbed "Andrew", using a raspberry pi. Since we are using
+python for that project, it makes sense to use it here as well. It's also helpful that I don't know python very very
+well. If I knew it too well, I'd have to break my understanding to introduce new concepts into the code.
+However, since I don't know the language very well yet, I can grow both my understanding of the language and my
+understanding of the concepts together as I work on it. As for the name, "Tom Riddle": it refers to Harry Potter book
+two, when Harry finds the book that responded to his writing with it's own text ink and introduced itself as
+"Tom Riddle".
