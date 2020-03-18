@@ -1,5 +1,6 @@
 
 import package
+import Memory
 
 print(
     "\n\n"
@@ -10,4 +11,13 @@ print(
     "\\***********************************//\n"
 )
 
-package.module.method()
+# put AI initializing code here
+
+print(package.module.string)  # can access variables from other modules
+
+Memory.data_space["last"] = "omega"
+
+print(Memory.data_space)
+
+print("\n\neureka")
+
