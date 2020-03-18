@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5cb5b4c-d843-449d-8459-25fd2312161a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tomRiddle/IO/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomRiddle/IO/camera.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomRiddle/IO/commandline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomRiddle/IO/dataBuilder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomRiddle/IO/microphone.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomRiddle/IO/motor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomRiddle/IO/speaker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomRiddle/Memory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tomRiddle/DataSpace.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tomRiddle/Thread.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tomRiddle/setup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tomRiddle/test/test_mod.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/package/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/package/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/package/module.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/package/module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/start.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomRiddle/IO/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/Memory/memory.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomRiddle/IO/dataBuilder.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/Map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomRiddle/IO/microphone.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/Op_Space.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomRiddle/IO/motor.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/test/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomRiddle/IO/speaker.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/test/memoryfill.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomRiddle/Memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/Memory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomRiddle/package/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomRiddle/package/module.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomRiddle/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/Start.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +58,28 @@
       <recent name="C:\Users\CSmith\Documents\GitHub\AI-sandbox\Tom Riddle\Theory" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.start">
+  <component name="RunManager" selected="Python.Start">
+    <configuration name="Start" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AI-sandbox" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tomRiddle" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\CSmith\Documents\GitHub\AI-sandbox\tomRiddle\Start.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="__init__ (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AI-sandbox" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -99,30 +122,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="start" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="AI-sandbox" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tomRiddle" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tomRiddle/start.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.start" />
+        <item itemvalue="Python.Start" />
         <item itemvalue="Python.__init__ (1)" />
         <item itemvalue="Python.__init__" />
       </list>
@@ -153,38 +155,72 @@
       <option name="project" value="LOCAL" />
       <updated>1584419214669</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="expirimenting with the parts of python I will need to use">
+      <created>1584505343973</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1584505343973</updated>
+    </task>
+    <task id="LOCAL-00004" summary="eureka">
+      <created>1584505391201</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584505391201</updated>
+    </task>
+    <task id="LOCAL-00005" summary="eureka">
+      <created>1584505420500</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1584505420500</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="just started" />
     <MESSAGE value="expirimenting with the parts of python I will need to use" />
-    <option name="LAST_COMMIT_MESSAGE" value="expirimenting with the parts of python I will need to use" />
+    <MESSAGE value="eureka" />
+    <option name="LAST_COMMIT_MESSAGE" value="eureka" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1584505390501">
+    <state x="233" y="0" key="#Intentions" timestamp="1584559374955">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584505390501" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1584375188311">
+    <state x="233" y="0" key="#Intentions/0.0.1280.680@0.0.1280.680" timestamp="1584559374955" />
+    <state x="390" y="144" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584558309750">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1584375188311" />
-    <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1584505396078">
+    <state x="390" y="144" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1584558309750" />
+    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1584505419733">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1584505396078" />
-    <state width="1259" height="163" key="GridCell.Tab.0.center" timestamp="1584505396078">
+    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584505419733" />
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1584559240801">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1584505396078" />
-    <state width="1259" height="163" key="GridCell.Tab.0.left" timestamp="1584505396078">
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1584559240801" />
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1584574042130">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1584505396078" />
-    <state width="1259" height="163" key="GridCell.Tab.0.right" timestamp="1584505396078">
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1584574042130" />
+    <state width="1259" height="163" key="GridCell.Tab.0.center" timestamp="1584574042130">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1584505396078" />
+    <state width="1259" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1584574042130" />
+    <state width="1259" height="163" key="GridCell.Tab.0.left" timestamp="1584574042130">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1584574042130" />
+    <state width="1259" height="163" key="GridCell.Tab.0.right" timestamp="1584574042130">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1584574042130" />
+    <state x="233" y="0" key="scopes" timestamp="1584567515125">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="0" key="scopes/0.0.1280.680@0.0.1280.680" timestamp="1584567515125" />
   </component>
 </project>
