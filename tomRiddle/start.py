@@ -19,5 +19,5 @@ Memory.data_space["last"] = "omega"
 
 print(Memory.data_space)
 
-print("\n\neureka")
+print("\n\neureka\n...")
 
