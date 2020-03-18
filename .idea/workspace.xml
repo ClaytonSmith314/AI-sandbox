@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5cb5b4c-d843-449d-8459-25fd2312161a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tomRiddle/DataSpace.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomRiddle/Thread.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomRiddle/setup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomRiddle/test/test_mod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/IO/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/Memory/memory.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/IO/dataBuilder.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/Map.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/IO/microphone.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/Op_Space.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/IO/motor.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/test/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/IO/speaker.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/test/memoryfill.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/Memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/Memory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/package/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/package/module.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/Start.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomRiddle/test/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/expiriment/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomRiddle/test/memoryfill.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/expiriment/memexp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomRiddle/test/test_mod.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/expiriment/exp_mod.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,6 +207,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1584574042130" />
+    <state x="450" y="258" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584574594142">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="450" y="258" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1584574594142" />
     <state x="233" y="0" key="scopes" timestamp="1584567515125">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
