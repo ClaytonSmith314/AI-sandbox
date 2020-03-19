@@ -1,7 +1,7 @@
 
 import Memory
 import setup
-from expiriment import memexp
+import Op_Space
 
 setup.boot()
 
@@ -16,16 +16,5 @@ print(
 
 # put AI initializing code here
 
-letters = 'abcdefghijklmnopqrstuvwxyz '
-x = 0
-
-print(Memory.memory)
-print(len(Memory.memory))
-
-
-def finish():
-    setup.close()
-
-
-finish()
+Op_Space.start()
 

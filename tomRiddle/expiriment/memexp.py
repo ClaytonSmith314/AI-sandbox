@@ -1,7 +1,8 @@
 import Memory
 import random
 
-def fillRand(n):
+
+async def fillrand(n):
     letters = 'abcdefghijklmnopqrstuvwxyz '
     x = 0
     for x in range(n):
