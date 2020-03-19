@@ -7,6 +7,7 @@ __init_code = 0
 # code 0, default start
 def boot0():
     print("starting default boot")
+    Memory.load()
 
 
 def close0():
