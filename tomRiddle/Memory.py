@@ -19,4 +19,10 @@ def load(path=root+mfile):
 
 def dump(path=root+mfile):
     with open(path, 'w') as f:
-        json.dump(memory, f)
+        json.dump(memory, f, indent=1)
+
+
+def clear_memory(path=root+mfile):
+    global memory
+    memory = {}
+    dump(path)

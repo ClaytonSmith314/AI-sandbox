@@ -19,10 +19,13 @@ print(
 letters = 'abcdefghijklmnopqrstuvwxyz '
 x = 0
 
-memexp.fillRand(50)
-
 print(Memory.memory)
 print(len(Memory.memory))
 
 
-setup.close()
+def finish():
+    setup.close()
+
+
+finish()
+
