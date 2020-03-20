@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Memory/memory.json" beforeDir="false" afterPath="$PROJECT_DIR$/Memory/memory.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tomRiddle/Op_Space.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/Op_Space.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomRiddle/expiriment/exp_mod.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/expiriment/exp_mod.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tomRiddle/expiriment/memexp.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/expiriment/memexp.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -267,22 +268,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1584652940991" />
-    <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1584656049733">
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1584675886276">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1584656049733" />
-    <state width="1259" height="163" key="GridCell.Tab.0.center" timestamp="1584656049733">
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1584675886276" />
+    <state width="1259" height="163" key="GridCell.Tab.0.center" timestamp="1584675886276">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1584656049733" />
-    <state width="1259" height="163" key="GridCell.Tab.0.left" timestamp="1584656049733">
+    <state width="1259" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1584675886276" />
+    <state width="1259" height="163" key="GridCell.Tab.0.left" timestamp="1584675886275">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1584656049733" />
-    <state width="1259" height="163" key="GridCell.Tab.0.right" timestamp="1584656049733">
+    <state width="1259" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1584675886275" />
+    <state width="1259" height="163" key="GridCell.Tab.0.right" timestamp="1584675886276">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1584656049733" />
+    <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1584675886276" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1584652909392">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
