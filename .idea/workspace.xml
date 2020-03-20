@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Memory/memory.json" beforeDir="false" afterPath="$PROJECT_DIR$/Memory/memory.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tomRiddle/Op_Space.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/Op_Space.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/Start.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/Start.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tomRiddle/expiriment/memexp.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/expiriment/memexp.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +39,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../COVID19project" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -50,6 +50,48 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.Start">
+    <configuration name="Create_Task" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AI-sandbox" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../COVID19project" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../COVID19project/Create_Task.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Start (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AI-sandbox" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tomRiddle" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tomRiddle/Start.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AI-sandbox" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -116,6 +158,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Start" />
+        <item itemvalue="Python.Start (1)" />
+        <item itemvalue="Python.Create_Task" />
         <item itemvalue="Python.__init__ (1)" />
         <item itemvalue="Python.__init__" />
       </list>
@@ -188,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584578172891</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="asyncio experiment">
+      <created>1584632244990</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1584632244990</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -196,7 +247,8 @@
     <MESSAGE value="expirimenting with the parts of python I will need to use" />
     <MESSAGE value="eureka" />
     <MESSAGE value="experiment" />
-    <option name="LAST_COMMIT_MESSAGE" value="experiment" />
+    <MESSAGE value="asyncio experiment" />
+    <option name="LAST_COMMIT_MESSAGE" value="asyncio experiment" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="0" key="#Intentions" timestamp="1584559374955">
@@ -207,30 +259,34 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="390" y="144" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1584558309750" />
-    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1584578172235">
+    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1584632244183">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584578172235" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1584559240801">
+    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584632244183" />
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1584652940991">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1584559240801" />
-    <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1584632217191">
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1584652940991" />
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1584656049733">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1584632217191" />
-    <state width="1259" height="163" key="GridCell.Tab.0.center" timestamp="1584632217191">
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1584656049733" />
+    <state width="1259" height="163" key="GridCell.Tab.0.center" timestamp="1584656049733">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1584632217191" />
-    <state width="1259" height="163" key="GridCell.Tab.0.left" timestamp="1584632217190">
+    <state width="1259" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1584656049733" />
+    <state width="1259" height="163" key="GridCell.Tab.0.left" timestamp="1584656049733">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1584632217190" />
-    <state width="1259" height="163" key="GridCell.Tab.0.right" timestamp="1584632217191">
+    <state width="1259" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1584656049733" />
+    <state width="1259" height="163" key="GridCell.Tab.0.right" timestamp="1584656049733">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1584632217191" />
+    <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1584656049733" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1584652909392">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1584652909392" />
     <state x="450" y="258" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584574594142">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
