@@ -1,10 +1,11 @@
 
 import json
 
+# TODO: update Memory to work with multiple files efectively
 # handles interaction between program and memory files
 
 root = "C:/Users/CSmith/Documents/GitHub/AI-sandbox/Memory/"
-mfile = "memory.json"
+mfile = "expmemory.json"
 
 memory = {
 
@@ -25,4 +26,10 @@ def dump(path=root+mfile):
 def clear_memory(path=root+mfile):
     global memory
     memory = {}
+    dump(path)
+
+
+def update(symbol, value, path=root+mfile):
+    global memory
+    memory[symbol] = value
     dump(path)

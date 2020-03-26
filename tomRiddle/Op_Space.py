@@ -5,18 +5,23 @@ from expiriment import exp_mod
 from expiriment import memexp
 import Memory
 
-# here's where other coroutines go
+# this will be list of all the tasks that are running at any given time ["name": task]
+tasks = {}
 
-running = {
-}
+# this will be a tree of what tasks are AWAITING other futures {"name": ["future"]}
+# technicly, we could break the hierarhy and create unbreakable await loops - Good or bad???
+# -- it's bad. We could break the system
+
+stack_tree = {}
 
 
 # main coroutine. only runs once.
 async def main():
+    #global tasks
     print("entering main function")
-    running[asyncio.create_task(exp_mod.exampleCoroutine())] = {}
-    for task in running.keys():
-        await task
+
+    # this is where all the logic that is running goes
+
     print("exiting main")
     setup.close()
 
