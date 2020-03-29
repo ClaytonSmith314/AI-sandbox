@@ -2,6 +2,7 @@
 import json
 
 # TODO: update Memory to work with multiple files efectively
+# TODO: Update Memory to be asynchornous
 # handles interaction between program and memory files
 
 root = "C:/Users/CSmith/Documents/GitHub/AI-sandbox/Memory/"

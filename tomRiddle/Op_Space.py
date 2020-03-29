@@ -21,6 +21,7 @@ async def main():
     print("entering main function")
 
     # this is where all the logic that is running goes
+    await exp_mod.exampleCoroutine()
 
     print("exiting main")
     setup.close()
