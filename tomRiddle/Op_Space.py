@@ -1,9 +1,10 @@
 
+# this module has become obelite. Either find a way to make it usefull, or get rid of it
+
 import asyncio
 import setup
-from expiriment import exp_mod
-from expiriment import memexp
-import Memory
+import mu
+import threading
 
 # this will be list of all the tasks that are running at any given time ["name": task]
 tasks = {}
@@ -21,11 +22,15 @@ async def main():
     print("entering main function")
 
     # this is where all the logic that is running goes
-    await exp_mod.exampleCoroutine()
+    await mu.event_loop()
 
     print("exiting main")
-    setup.close()
 
 
 def start():
     asyncio.run(main())
+
+
+async def run(thread):
+    thread.start()
+

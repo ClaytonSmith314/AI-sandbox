@@ -1,36 +1,37 @@
 
 import json
 
-# TODO: update Memory to work with multiple files efectively
-# TODO: Update Memory to be asynchornous
-# handles interaction between program and memory files
+# TODO: update lang to work with multiple files efectively
+# TODO: Update lang to be asynchornous
+# handles interaction between program and lang files
 
 root = "C:/Users/CSmith/Documents/GitHub/AI-sandbox/Memory/"
-mfile = "expmemory.json"
 
-memory = {
-
+files = {
 }
 
 
-def load(path=root+mfile):
+def import_file(file_id, file):
+    files[file_id] = file
+
+
+def load(file_id):
+    path = root + files[file_id]
     with open(path) as f:
-        global memory
-        memory = json.load(f)
+        return json.load(f)
 
 
-def dump(path=root+mfile):
+def dump(d, file_id):
+    path = root + files[file_id]
     with open(path, 'w') as f:
-        json.dump(memory, f, indent=1)
+        json.dump(d, f, indent=1)
 
 
-def clear_memory(path=root+mfile):
-    global memory
-    memory = {}
-    dump(path)
+def clear_memory(d, file_id):
+    path = root + files[file_id]
+    d = {}
+    dump(d)
+    return {}
 
 
-def update(symbol, value, path=root+mfile):
-    global memory
-    memory[symbol] = value
-    dump(path)
+import_file('heap', 'heap.json')

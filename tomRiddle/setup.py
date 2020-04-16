@@ -1,5 +1,5 @@
 
-import Memory
+# this has become obselite. get rid of it
 
 __init_code = 0
 
@@ -7,11 +7,10 @@ __init_code = 0
 # code 0, default start
 def boot0():
     print("starting default boot")
-    Memory.load()
 
 
 def close0():
-    Memory.dump()
+    """closes things"""
 
 
 # methods implemented outside of setup.py
