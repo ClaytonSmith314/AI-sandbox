@@ -24,10 +24,10 @@ heap = {}
 stack = []
 
 f_context = {
-    'initiate': '',
-    'effectuate': '',
-    'record': '',
-    'define': '',
+    'contruct': {'foo': '', 'foobar': ''},
+    'effectuate': {'oiwu': ''},
+    'record': {'wov': ''},
+    'define': {'nir': ''},
 }
 
 

@@ -1,9 +1,5 @@
 
-import Memory
-import setup
 import Op_Space
-import mu
-import GUI
 
 # setup.boot()
 
@@ -16,7 +12,6 @@ print(
     "\\\\***********************************//\n"
 )
 
-GUI.show()
 
 # put AI initializing code here
 

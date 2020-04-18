@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5cb5b4c-d843-449d-8459-25fd2312161a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Memory/heap.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomRiddle/mi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Memory/expmemory.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Memory/lang.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Memory/path/path1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Memory/situation.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Theory/Outline.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Theory/Overview" beforeDir="false" afterPath="$PROJECT_DIR$/Theory/Journal.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/Memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/Memory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/Op_Space.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/Op_Space.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tomRiddle/Start.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/Start.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/expiriment/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/expiriment/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomRiddle/mi.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/mi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tomRiddle/mu.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/mu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,46 +294,46 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1584652940991" />
-    <state width="1259" height="135" key="GridCell.Tab.0.bottom" timestamp="1587005699640">
+    <state width="1259" height="135" key="GridCell.Tab.0.bottom" timestamp="1587174453377">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1258" height="163" key="GridCell.Tab.0.bottom.inPresentationMode" timestamp="1586896549255">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1258" height="163" key="GridCell.Tab.0.bottom.inPresentationMode/0.0.1280.680@0.0.1280.680" timestamp="1586896549255" />
-    <state width="1259" height="135" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587005699640" />
-    <state width="1259" height="135" key="GridCell.Tab.0.center" timestamp="1587005699640">
+    <state width="1259" height="135" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587174453377" />
+    <state width="1259" height="135" key="GridCell.Tab.0.center" timestamp="1587174453377">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1258" height="163" key="GridCell.Tab.0.center.inPresentationMode" timestamp="1586896549254">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1258" height="163" key="GridCell.Tab.0.center.inPresentationMode/0.0.1280.680@0.0.1280.680" timestamp="1586896549254" />
-    <state width="1259" height="135" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587005699640" />
-    <state width="1259" height="135" key="GridCell.Tab.0.left" timestamp="1587005699640">
+    <state width="1259" height="135" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587174453377" />
+    <state width="1259" height="135" key="GridCell.Tab.0.left" timestamp="1587174453377">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1258" height="163" key="GridCell.Tab.0.left.inPresentationMode" timestamp="1586896549254">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1258" height="163" key="GridCell.Tab.0.left.inPresentationMode/0.0.1280.680@0.0.1280.680" timestamp="1586896549254" />
-    <state width="1259" height="135" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587005699640" />
-    <state width="1259" height="135" key="GridCell.Tab.0.right" timestamp="1587005699640">
+    <state width="1259" height="135" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587174453377" />
+    <state width="1259" height="135" key="GridCell.Tab.0.right" timestamp="1587174453377">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1258" height="163" key="GridCell.Tab.0.right.inPresentationMode" timestamp="1586896549254">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1258" height="163" key="GridCell.Tab.0.right.inPresentationMode/0.0.1280.680@0.0.1280.680" timestamp="1586896549254" />
-    <state width="1259" height="135" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587005699640" />
+    <state width="1259" height="135" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587174453377" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1586960412734">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1586960412734" />
-    <state x="450" y="258" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584574594142">
+    <state x="450" y="258" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587184988400">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="450" y="258" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1584574594142" />
+    <state x="450" y="258" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1587184988400" />
     <state x="233" y="0" key="scopes" timestamp="1584567515125">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
