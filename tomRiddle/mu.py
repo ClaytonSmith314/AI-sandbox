@@ -8,7 +8,7 @@ import Memory
 # Symbol level Data Structures #
 # ---------------------------- #
 
-record = {}
+records = []
 
 data = {}
 
@@ -24,10 +24,10 @@ heap = {}
 stack = []
 
 f_context = {
-    'contruct': {'foo': '', 'foobar': ''},
-    'effectuate': {'oiwu': ''},
-    'record': {'wov': ''},
-    'define': {'nir': ''},
+    'construct': [],
+    'effectuate': {},
+    'record': {},
+    'define': {},
 }
 
 
@@ -44,4 +44,4 @@ async def event_loop():
     awake = 'true'
     while awake == 'true':
         mi.event()
-        awake = 'false'  # temorarily stops loop from running forever
+        # awake = 'false'  # temorarily stops loop from running forever
