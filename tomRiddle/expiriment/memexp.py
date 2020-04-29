@@ -2,7 +2,7 @@ import Memory
 import random
 
 
-async def fillrand(n):
+def fillrand(n):
     letters = 'abcdefghijklmnopqrstuvwxyz '
     x = 0
     for x in range(n):

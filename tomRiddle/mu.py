@@ -23,25 +23,18 @@ heap = {}
 
 stack = []
 
-f_context = {
-    'construct': [],
-    'effectuate': {},
-    'record': {},
-    'define': {},
-}
-
 
 # the main event loop that runs all actions in program
 
-async def event_loop():
+async def event_loop():  # TODO: remove async
     import mi
     global heap, context
 
     heap = Memory.load('heap')
     print(heap)
 
+    mi.initialize()
     """this loop runs all the tasks in the task list and checks the context for what to do"""
     awake = 'true'
     while awake == 'true':
         mi.event()
-        # awake = 'false'  # temorarily stops loop from running forever
