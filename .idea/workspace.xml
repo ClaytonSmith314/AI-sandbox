@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5cb5b4c-d843-449d-8459-25fd2312161a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tomRiddle/expiriment/Op_Space.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomRiddle/lang.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Theory/Journal.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Theory/Journal.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/Op_Space.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/Start.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/Start.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/expiriment/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/expiriment/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/expiriment/miArchive.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/expiriment/miArchive.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/mi.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/mi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/mu.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/mu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomRiddle/setup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomRiddle/lang.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/lang.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588202782121</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="started language based interpreter">
+      <created>1588732975192</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1588732975192</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -300,7 +297,8 @@
     <MESSAGE value="getting it together" />
     <MESSAGE value="learning cycle" />
     <MESSAGE value="almost there" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost there" />
+    <MESSAGE value="started language based interpreter" />
+    <option name="LAST_COMMIT_MESSAGE" value="started language based interpreter" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="0" key="#Intentions" timestamp="1586573860819">
@@ -311,46 +309,46 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="390" y="144" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1584558309750" />
-    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1588202779685">
+    <state x="324" y="0" key="CommitChangelistDialog2" timestamp="1588732974020">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1588202779685" />
+    <state x="324" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1588732974020" />
     <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1587488353178">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1587488353178" />
-    <state width="1259" height="172" key="GridCell.Tab.0.bottom" timestamp="1588719039720">
+    <state width="1259" height="172" key="GridCell.Tab.0.bottom" timestamp="1588737524429">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1258" height="163" key="GridCell.Tab.0.bottom.inPresentationMode" timestamp="1586896549255">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1258" height="163" key="GridCell.Tab.0.bottom.inPresentationMode/0.0.1280.680@0.0.1280.680" timestamp="1586896549255" />
-    <state width="1259" height="172" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588719039720" />
-    <state width="1259" height="172" key="GridCell.Tab.0.center" timestamp="1588719039720">
+    <state width="1259" height="172" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588737524429" />
+    <state width="1259" height="172" key="GridCell.Tab.0.center" timestamp="1588737524429">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1258" height="163" key="GridCell.Tab.0.center.inPresentationMode" timestamp="1586896549254">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1258" height="163" key="GridCell.Tab.0.center.inPresentationMode/0.0.1280.680@0.0.1280.680" timestamp="1586896549254" />
-    <state width="1259" height="172" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588719039720" />
-    <state width="1259" height="172" key="GridCell.Tab.0.left" timestamp="1588719039720">
+    <state width="1259" height="172" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588737524429" />
+    <state width="1259" height="172" key="GridCell.Tab.0.left" timestamp="1588737524429">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1258" height="163" key="GridCell.Tab.0.left.inPresentationMode" timestamp="1586896549254">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1258" height="163" key="GridCell.Tab.0.left.inPresentationMode/0.0.1280.680@0.0.1280.680" timestamp="1586896549254" />
-    <state width="1259" height="172" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588719039720" />
-    <state width="1259" height="172" key="GridCell.Tab.0.right" timestamp="1588719039720">
+    <state width="1259" height="172" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588737524429" />
+    <state width="1259" height="172" key="GridCell.Tab.0.right" timestamp="1588737524429">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1258" height="163" key="GridCell.Tab.0.right.inPresentationMode" timestamp="1586896549254">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1258" height="163" key="GridCell.Tab.0.right.inPresentationMode/0.0.1280.680@0.0.1280.680" timestamp="1586896549254" />
-    <state width="1259" height="172" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588719039720" />
+    <state width="1259" height="172" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588737524429" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1586960412734">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

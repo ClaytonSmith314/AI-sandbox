@@ -9,7 +9,7 @@ class Interpreter:  # tasked with interpreting a string of words
     def __init__(self, rawstring):
         self.string = rawstring.split()  # this will make it easy to iterate through
         self.pointer = 0  # start at the begining
-        self.active = {}  # all the words running their definitions
+        # self.active = {}  # all the words running their definitions
         self.stack = []  # all the words waiting on other words
         self.history = []  # each word has a result, which can be used by later words. That (or a referance to it) goes here
 
@@ -54,9 +54,11 @@ class Executer:
                 line = self.definition(self.pointer)
                 reader = Interpreter(line)
                 results = reader.read()  # normally, reader doesn't return any usefull results, but sometimes, it changes opperations
-                if 'next' in results:
-                    """ """  # TODO: last spot
-
+                if results[0] == 'return':
+                    return 'done', results[1]  # might want to edit to return more than one value...
+                if results[0] == 'next':
+                    return 'suspended', ''
+                self.pointer = self.pointer + 1  # move on to next word
         else:
             if self.word in native:  # native words have their own functions
                 return native[self.word](self.interpretor)  # we can run the function and directly get the result
@@ -64,14 +66,27 @@ class Executer:
 
 # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- #
 
-def nreturn(interpretor):
-    return 'suspended', 'next'
+
+# all native functions will be generators
+
+def returnword(interpreter):
+    return 'done', 'return'
 
 
-def nextword(interpretor):
-    return 'done',  'next'  # next suspends the parent opperation, but it itself does not suspend
+def nextword(interpreter):
+    return 'done', 'next'  # next suspends the parent opperation, but it itself does not suspend
+                           # TODO: find out how to get next to return the actual next value
+
+def lastword(interpreter):
+    """ """
 
 
-native = {}
+def isword(interpreter):
+    """ """
+
+native = {
+    'return': returnword,
+    'next': nextword,
+}
 
 # native methods could be classes or methods. which one do I want. probibaly want both honestly
