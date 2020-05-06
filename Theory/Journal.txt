@@ -96,3 +96,23 @@ The other thing this cycle does is it means that the AI program will always have
 circular preparing itself for it's next revolution, the program will never go completly static. My hope is to setup a
 function scheme that can run the learning cycle. This will probibly involve lower level data structures to keep track
 of where different parts of the cycle need to happen
+
+---------------------------
+
+5/2/2020
+
+The Learning Cycle model does well to describe the overall structure of the AI, but it still needs a basic syntax to
+be used correctly. This has been a big problem for me for the past week. I have tried to create a syntax at least
+strong enough to allow the cycle to propogate, but my efforts so far have not worked.
+
+But I now have an idea for what the syntax needs to be. We'll start with the idea of referances. Every symbol in
+context or heap or anywhere else is really just a pointer. It refers the opperating program to where the native or
+defined definition to that symbol is. Referances can be used in complex ways to create a context map, where different
+ideas get information from each other.
+
+Their are three basic types of referances
+  1.  direct referance: 'foo' or 'foo/foobar'-- the symbol or path refers directly to a point in data
+  2.  passing referance: 'foo(foobar)' -- function notation. The referance is passed into the function where it takes
+                                          the place of some variable.
+  3.  relative referance: '<x> foo <y>' or '' -- refers to a symbol by its location relative to the location of the
+                                                 acting symbol (or some other symbol)

@@ -1,5 +1,6 @@
 
 import Memory
+import time
 
 # this is the location of all main data structures used in the program
 
@@ -26,15 +27,20 @@ stack = []
 
 # the main event loop that runs all actions in program
 
-async def event_loop():  # TODO: remove async
-    import mi
+def event_loop():
+    import mi, native
     global heap, context
 
     heap = Memory.load('heap')
-    print(heap)
+    native.build()
 
     mi.initialize()
     """this loop runs all the tasks in the task list and checks the context for what to do"""
-    awake = 'true'
-    while awake == 'true':
+    awake = True
+    waiting = True  # helps to see eaach cycle pass by one at a time
+    while awake:
         mi.event()
+        if(waiting):
+            time.sleep(1)
+            print('...')
+

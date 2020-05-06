@@ -1,7 +1,6 @@
 
-import Op_Space
+import mu
 
-# setup.boot()
 
 print(
     "\n\n"
@@ -12,9 +11,5 @@ print(
     "\\\\***********************************//\n"
 )
 
-
-# put AI initializing code here
-
-Op_Space.start()
-
-# setup.close()
+print('starting event loop')
+mu.event_loop()
