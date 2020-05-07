@@ -6,87 +6,81 @@ from mu import heap, context, data, records
 # ex sentance: remove the panel and get the green cube
 
 class Interpreter:  # tasked with interpreting a string of words
-    def __init__(self, rawstring):
-        self.string = rawstring.split()  # this will make it easy to iterate through
-        self.pointer = 0  # start at the begining
-        # self.active = {}  # all the words running their definitions
-        self.stack = []  # all the words waiting on other words
-        self.history = []  # each word has a result, which can be used by later words. That (or a referance to it) goes here
-
-    def read(self):  # blocking read of string
-        while self.pointer < len(self.string):  # run until string is completly interpreted
-            self.run(Executer(self, self.string[self.active]))  # create a new Executer to run the words code
-            self.pointer = self.pointer + 1  # incriment one to run next word
-
-        return self.history
-
-    def run(self, executer):
-        status, result = executer.execute()  # execute the word and get the result and status
-        if status == 'done':  # if the executer is done, we can save the result in history and run the last stack
-            self.history[self.pointer] = result
-            if self.stack is not None:
-                self.run(self.stack.pop())  # note: this only works if we only suspend for the next word, but we can suspend twice...
-        if status == 'suspended':  # if the executer needs to wait on the next word, it is suspended and added to the stack
-            self.stack.append(executer)  # for now, I'll assume it suspends only until next return
-
-
-# -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- #
-
-
-class Executer:
-    def __init__(self, interpretor, word):
-        self.word = word
-        self.interpretor = interpretor
-        if word in heap:
-            self.definition = heap[word]
-        else:
-            if word in native:  # use a native method call to execute word
-                """ """
+    def __init__(self, text):
+        self.text = text  # this will make it easy to iterate through
+        self.construction = {}
+        self.history = []
         self.pointer = 0
-        self.status = 'active'
 
-    # words with an object property should return the address of their object allong with their return type
-    def execute(self):
-        if self.word in heap:
+    def read(self):  # reads multple statements in a text
+        self.construction = {}
+        for statement in self.text.split('.'):
+            running = self.evaluate(statement)  # I could easily make this a generator function...
+            next(running)  # work out ...
+        yield 'done', self.construction
 
-            while self.pointer < len(self.definition):
-                """for each line in the definition, interpret it."""
-                line = self.definition(self.pointer)
-                reader = Interpreter(line)
-                results = reader.read()  # normally, reader doesn't return any usefull results, but sometimes, it changes opperations
-                if results[0] == 'return':
-                    return 'done', results[1]  # might want to edit to return more than one value...
-                if results[0] == 'next':
-                    return 'suspended', ''
-                self.pointer = self.pointer + 1  # move on to next word
-        else:
-            if self.word in native:  # native words have their own functions
-                return native[self.word](self.interpretor)  # we can run the function and directly get the result
+    def evaluate(self, statement):  # reads a statement word by word
+        self.history = []
+        self.pointer = 0
+        for word in statement.split():
+            ex = execute()
+            status, value = next(ex)
 
+            # rather than if statements, we can yield from a handeler generator
+            if status == 'await':  # status is 'under what condition are you yielding control'
+                x = yield 'await', value
+                ex.send(x)
+            if status == 'sus':
+                """ """
+            if status == 'done':
+                """ """
 
-# -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- #
+            self.pointer = self.pointer + 1
+            # TODO: add stack waiting part here
+
+def execute(self, word):  # takes a word, finds its definition, and executes the definition
+    # yield directly from method or whatever
+    if word in heap:  # this word is defined word.
+        ex = Interpreter(heap[word])  # ex is another interpreter. This creates a rich kind of recursion
+        read = ex.read()
+        yield from read  # the executer yields whatever it reads. This causes read to run to get the execute value
+    else:
+        if word in native:  # this word is a function word
+            ex = native[word]()  # ex here is a generator function. This creates a halting point for the inherent recurssion
+            yield from ex  # the executer yields whatever it reads
+        else:  # this word is a referance word. We need to find its data
+            """ """  # note, some words have both definitions and data. These are object words. Makes sure we can make them
 
 
 # all native functions will be generators
+# all operating functions would be generators aswell
 
-def returnword(interpreter):
-    return 'done', 'return'
+def returnword():
+    yield 'done', 'return'
 
 
-def nextword(interpreter):
-    return 'done', 'next'  # next suspends the parent opperation, but it itself does not suspend
+def nextword():  # really think about this one. It's opperation could reviel a lot about how to get things to cooperate on different levels
+    n = yield 'await', 'next'  # next suspends to get the parent statements value
+    yield 'done', n
                            # TODO: find out how to get next to return the actual next value
 
+
 def lastword(interpreter):
-    """ """
+    return 'done', 'last'
 
 
 def isword(interpreter):
     """ """
 
+
 native = {
     'return': returnword,
     'next': nextword,
+}
+
+
+handelers = {
+    # we can use handelers to take care of different statuses
 }
 
 # native methods could be classes or methods. which one do I want. probibaly want both honestly

@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5cb5b4c-d843-449d-8459-25fd2312161a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tomRiddle/expiriment/acrchiveLang.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tomRiddle/lang.py" beforeDir="false" afterPath="$PROJECT_DIR$/tomRiddle/lang.py" afterDir="false" />
     </list>
@@ -361,9 +363,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="0" key="scopes/0.0.1280.680@0.0.1280.680" timestamp="1584567515125" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1588452466547">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1588823824814">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1588452466547" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1588823824814" />
   </component>
 </project>
