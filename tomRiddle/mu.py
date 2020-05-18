@@ -1,46 +1,39 @@
 
-import Memory
-import time
 
 # this is the location of all main data structures used in the program
 
+awake = True;
+# ----------------------- #
+# Passing Data Structures #
+# ----------------------- #
 
-# ---------------------------- #
-# Symbol level Data Structures #
-# ---------------------------- #
+Objectives_q = []  # note, they could be dictionaries
+Objectives = {}
 
-records = []
+Context_q = []
+Context = {}
 
-data = {}
+Results_q = []
+Results = {}
 
-context = {}
-
-heap = {}
-
-
-# -------------------------------- #
-#  f-scheme level data structures  #
-# -------------------------------- #
-
-stack = []
+Situation_q = []
+Situation = {}
 
 
-# the main event loop that runs all actions in program
+# ---------------------- #
+# Memory Data Structures #
+# ---------------------- #
 
-def event_loop():
-    import mi, native
-    global heap, context
+Info = {}  # the set of all information produced in the system
 
-    heap = Memory.load('heap')
-    native.build()
+heap = {}  # the set of action groups that can be employed for given signals
 
-    mi.initialize()
-    """this loop runs all the tasks in the task list and checks the context for what to do"""
-    awake = True
-    waiting = True  # helps to see eaach cycle pass by one at a time
-    while awake:
-        mi.event()
-        if(waiting):
-            time.sleep(1)
-            print('...')
+rules = {}  # the set of desired results associated with certain negative signals
+
+
+# --------------------------- #
+#  secondary data structures  #
+# --------------------------- #
+
+situation_queue = {}
 

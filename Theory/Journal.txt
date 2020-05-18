@@ -116,3 +116,14 @@ Their are three basic types of referances
                                           the place of some variable.
   3.  relative referance: '<x> foo <y>' or '' -- refers to a symbol by its location relative to the location of the
                                                  acting symbol (or some other symbol)
+
+---------------------------
+
+5/8/2020
+
+the concept of context must be rethought. I'm adding a new data set: network. network will be what transfirs data
+each opperating cycle. context will hold the subsystems making up network so that parts of the network can easily
+be removed and moved around. Think of network as the actual particles in a room that create a situation, while
+context is merely the set of words and objects we preceive. It's the objects that can be moved and given specific
+properties, but the actual running of it is done on the network. The pieces above with referances are better understood
+with gates. Gates take some input, do some opperation, and put out some output.

@@ -1,5 +1,6 @@
-
+import Memory
 import mu
+import mi
 
 
 print(
@@ -11,5 +12,9 @@ print(
     "\\\\***********************************//\n"
 )
 
-print('starting event loop')
-mu.event_loop()
+print('loading memory')
+mu.heap = Memory.load('heap')
+
+print('initializing threads')
+mi.run()
+print('start exited')
