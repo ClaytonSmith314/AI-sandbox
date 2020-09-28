@@ -6,6 +6,7 @@ import tensorflow.keras as keras
 import tensorflow as tf
 import random as rand
 import math
+import os
 
 WIDTH = 7
 HEIGHT = 6
@@ -45,18 +46,16 @@ def showGUI(surface=None):
     pygame.display.flip()
 
 
-def build_model():
+def more_dense_sigs_model():
     model = keras.Sequential([
         keras.layers.ZeroPadding2D(padding=1, input_shape=(WIDTH, HEIGHT, 1)),
-        keras.layers.Conv2D(24, (4, 4), activation=None),
+        keras.layers.Conv2D(50, (4, 4), activation='sigmoid'),
         keras.layers.ZeroPadding2D(padding=2),
-        keras.layers.Conv2D(64, (4, 4), activation=None),
-        keras.layers.ZeroPadding2D(padding=2),
-        keras.layers.Conv2D(13, (4, 4), activation=None),
-        keras.layers.ZeroPadding2D(padding=1),
-        keras.layers.Conv2D(1, (4, 4), activation=None),
+        keras.layers.Conv2D(200, (4, 4), activation='sigmoid'),
         keras.layers.Flatten(),
-        keras.layers.Dense(1, activation='sigmoid'),
+        keras.layers.Dense(200, activation='sigmoid'),
+        keras.layers.Dense(60, activation='sigmoid'),
+        keras.layers.Dense(1, activation='sigmoid')
     ])
     model.compile(optimizer='adam', loss='binary_crossentropy')
     # model.build(input_shape=(WIDTH+6, HEIGHT, 2))
@@ -107,17 +106,19 @@ def place(value, slot, my_board):
 
 def evaluate_actions(myboard: np.ndarray, model: keras.Model):
     positions = None
+    successes = []
     for x in range(WIDTH):
         pos = myboard.copy()
-        place(1, x, pos)
+        sucessfull, winner = place(1, x, pos)
+        successes.append(sucessfull)
         if positions is None:
             positions = pos.reshape((1, WIDTH, HEIGHT, 1))
         else:
             positions = np.append(positions, pos.reshape((1, WIDTH, HEIGHT, 1)), axis=0)
 
-    # print(positions.shape)
-    this_predictions = model.predict(positions)
-    return this_predictions.reshape(7)
+    this_predictions = model.predict(positions)  # predictions are between 0 and 1
+
+    return successes,  this_predictions.reshape(7)
 
 
 def correct_choice(reg_choice: int, my_board: np.ndarray):
@@ -148,364 +149,277 @@ def train_game(history: np.ndarray, model: keras.Model, score=1):
     model.fit(history, train_for, verbose=0)
 
 
-def play_game_self(red_model: keras.Model, blue_model: keras.Model, delta=1, show=False, training=True, flip=.5, rand_start=False, rand_fuzz=0):
+class Player:
+    def __init__(self, name, trainable):
+        self.trainable = trainable
+        self.name = name
+
+    def get_choice(self, game_board):
+        pass
+
+    def train(self, game_history, score):  # x is the input group, score
+        pass
+
+
+class ModelPlayer(Player):
+    def __init__(self, name, model, is_training, choice_correct):
+        super().__init__(name, is_training)
+        self.model = model
+        self.choice_correct = choice_correct
+
+    def get_choice(self, eval_board):
+        sucesses, values = evaluate_actions(eval_board, self.model)  # get a list of confidences in choice
+        choice = np.argmax(values)  # pick the one with the strongest confidence
+        while not sucesses[choice]:
+            values.itemset(choice, 0)
+            choice = np.argmax(values)
+        if self.choice_correct:  # if choice correct is on, automatically fix errors
+            choice = correct_choice(choice, eval_board)
+        return choice
+
+    def train(self, game_history, score):  # x is the input group, score
+        if self.trainable:
+            train_game(history=game_history, model=self.model, score=score)
+
+
+class UserPlayer(Player):
+    def __init__(self, name):
+        super().__init__(name=name, trainable=False)
+
+    def get_choice(self, eval_board):
+        global surface
+        if surface is None:
+            showGUI(surface)
+        pygame.event.get()
+        while not pygame.mouse.get_pressed()[0]:
+            pygame.event.get()
+            time.sleep(.0001)
+        x, y = pygame.mouse.get_pos()
+        choice = int(x / SPACING)
+        return choice
+
+
+def play_game(red_player: Player, blue_player: Player, delta=1, show=False, training=True, flip=.5, rand_start=False, rand_fuzz=0):
     global board, board_flipped
+
+    # reset the board
     board = np.zeros((WIDTH, HEIGHT))
     board_flipped = False
     turn = 0
+
+    # rand start can be used to create different game senarios
     if rand_start:
         for v in (-1, 1):
             place(v, rand.randint(0, 6), board)
         turn = 2
 
+    # the history just keeps track of all the game states for training
     redHistory = np.zeros(shape=(0, WIDTH, HEIGHT, 1))
     blueHistory = np.zeros(shape=(0, WIDTH, HEIGHT, 1))
-    History = np.zeros(shape=(0, WIDTH, HEIGHT, 1))
+
     winner = 0
+
+    # play the game
     while winner == 0 and turn < WIDTH*HEIGHT:
+
+        # board flip can also be used to mix things up
         if flip > rand.random():
             board = np.flip(board, axis=0)
             board_flipped = not board_flipped
-        antiBoard = -1*board
-        redValues = evaluate_actions(antiBoard, red_model)
-        redChoice = np.argmax(redValues)
-        if rand_fuzz > rand.random():
-            redChoice = rand.randint(0, 6)
-        if CHOICE_CORRECT:
-            redChoice = correct_choice(redChoice, antiBoard)
-        succesfull, winner = place(-1, redChoice, board)
-        while not succesfull:
-            redValues.itemset(redChoice, -1)
-            redChoice = np.argmax(redValues)
-            succesfull, winner = place(-1, redChoice, board)
 
-        # redChoices = np.append(arr=redChoices, values=np.array([redChoice]), axis=0)
+        # for a model, 1's are always it's pieces, and -1's are always the enemies
+        # as a result, for red, the sign's of the board must be flipped, so the RED board is the antiBoard
+        antiBoard = -1*board
+
+        redChoice = red_player.get_choice(antiBoard)
+        succesfull, winner = place(-1, redChoice, board)
+
         redHistory = np.append(arr=redHistory, values=board.reshape([1, WIDTH, HEIGHT, 1]), axis=0)
-        History = np.append(arr=History, values=board.reshape([1, WIDTH, HEIGHT, 1]), axis=0)
+        # History = np.append(arr=History, values=board.reshape([1, WIDTH, HEIGHT, 1]), axis=0)
+
         if show:
             showGUI(surface)
             time.sleep(delta)
 
-        # print('Red: ')
-        # print(redValues)
-
         turn += 1
 
         if winner == 0:
+
             if flip > rand.random():
                 board = np.flip(board, axis=0)
                 board_flipped = not board_flipped
-            blueValues = evaluate_actions(board, blue_model)
-            blueChoice = np.argmax(blueValues)
-            if rand_fuzz > rand.random():
-                blueChoice = rand.randint(0, 6)
-            if CHOICE_CORRECT:
-                blueChoice = correct_choice(blueChoice, board)
+
+            blueChoice = blue_player.get_choice(board)
             succesfull, winner = place(1, blueChoice, board)
-            while not succesfull:
-                blueValues.itemset(blueChoice, -1)
-                blueChoice = np.argmax(blueValues)
-                succesfull, winner = place(1, blueChoice, board)
+
             blueHistory = np.append(arr=blueHistory, values=board.reshape([1, WIDTH, HEIGHT, 1]), axis=0)
-            History = np.append(arr=History, values=board.reshape([1, WIDTH, HEIGHT, 1]), axis=0)
+            # History = np.append(arr=History, values=board.reshape([1, WIDTH, HEIGHT, 1]), axis=0)
+
             if show:
                 showGUI(surface)
                 time.sleep(delta)
+
             turn += 1
 
     if training:
         redHistory = -1*redHistory
-        # timePenalty = 1 - History.shape[0]/50
         if winner == 1:  # blue is winner
-            train_game(history=redHistory, model=red_model, score=0)
-            train_game(history=blueHistory, model=blue_model, score=1)
+            red_score = 0
+            blue_score = 1
         if winner == -1:
-            train_game(history=redHistory, model=red_model, score=1)
-            train_game(history=blueHistory, model=blue_model, score=0)
+            red_score = 1
+            blue_score = -1
         if winner == 0:
-            train_game(history=redHistory, model=red_model, score=0)
-            train_game(history=blueHistory, model=blue_model, score=0)
+            red_score = .5
+            blue_score = .5
 
-    time.sleep(.001)
+        if red_player.trainable:
+            red_player.train(game_history=redHistory, score=red_score)
+        if blue_player.trainable:
+            blue_player.train(game_history=blueHistory, score=blue_score)
 
-    return winner, turn
-
-
-def user_choice():
-    global surface
-    if surface is None:
-        showGUI(surface)
-    pygame.event.get()
-    while not pygame.mouse.get_pressed()[0]:
-        pygame.event.get()
-        time.sleep(.0001)
-    x, y = pygame.mouse.get_pos()
-    choice = int(x/SPACING)
-    return choice
-
-
-def play_blue_person(ai_model: keras.Model, delta=1, show=True, training=False):
-    global board, board_flipped
-    board_flipped = False
-    board = np.zeros((WIDTH, HEIGHT))
-    History = np.zeros(shape=(0, WIDTH, HEIGHT, 1))
-    winner = 0
-    turn = 0
-    while winner == 0 and turn < WIDTH*HEIGHT:
-        antiBoard = -1*board
-        redValues = evaluate_actions(antiBoard, ai_model)
-        redChoice = np.argmax(redValues)
-        if CHOICE_CORRECT:
-            redChoice = correct_choice(redChoice, antiBoard)
-        succesfull, winner = place(-1, redChoice, board)
-        while not succesfull:
-            redValues.itemset(redChoice, -1)
-            redChoice = np.argmax(redValues)
-            succesfull, winner = place(-1, redChoice, board)
-        History = np.append(arr=History, values=board.reshape([1, WIDTH, HEIGHT, 1]), axis=0)
-        if show:
-            showGUI(surface)
-        turn += 1
-
-        if winner == 0:
-            blueChoice = user_choice()
-            succesfull, winner = place(1, blueChoice, board)
-            while not succesfull:
-                blueChoice = user_choice()
-                succesfull, winner = place(1, blueChoice, board)
-            History = np.append(arr=History, values=board.reshape([1, WIDTH, HEIGHT, 1]), axis=0)
-
-            if show:
-                showGUI(surface)
-                time.sleep(delta)
-
-            turn += 1
-
-    if training:
-        antiHistory = -1*History
-        # timePenalty = 1 - History.shape[0]/50
-        if winner == 1:  # blue is winner- player is winner
-            train_game(history=antiHistory, model=ai_model, score=0)
-            train_game(history=History, model=ai_model, score=1)
-        if winner == -1:  # red, AI is winner
-            train_game(history=antiHistory, model=ai_model, score=1)
-            train_game(history=History, model=ai_model, score=0)
-        if winner == 0:
-            train_game(history=antiHistory, model=ai_model, score=.5)
-
-    time.sleep(.001)
-
-    return winner, turn
-
-
-def play_red_person(ai_model: keras.Model, delta=1, show=True, training=False):
-    global board, board_flipped
-    board_flipped = False
-    board = np.zeros((WIDTH, HEIGHT))
-    History = np.zeros(shape=(0, WIDTH, HEIGHT, 1))
-    winner = 0
-    turn = 0
-    while winner == 0 and turn < WIDTH*HEIGHT:
-        antiBoard = -1*board
-        redChoice = user_choice()
-        succesfull, winner = place(-1, redChoice, board)
-        while not succesfull:
-            redChoice = user_choice()
-            succesfull, winner = place(-1, redChoice, board)
-        History = np.append(arr=History, values=board.reshape([1, WIDTH, HEIGHT, 1]), axis=0)
-        if show:
-            showGUI(surface)
-            time.sleep(delta)
-        turn += 1
-
-        if winner == 0:
-            blueValues = evaluate_actions(board, ai_model)
-            blueChoice = np.argmax(blueValues)
-            if CHOICE_CORRECT:
-                blueChoice = correct_choice(blueChoice, board)
-            succesfull, winner = place(1, blueChoice, board)
-            while not succesfull:
-                blueValues.itemset(blueChoice, -1)
-                blueChoice = np.argmax(blueValues)
-                succesfull, winner = place(1, blueChoice, board)
-            History = np.append(arr=History, values=board.reshape([1, WIDTH, HEIGHT, 1]), axis=0)
-            if show:
-                showGUI(surface)
-                # time.sleep(delta)
-            turn += 1
-
-    if training:
-        antiHistory = -1*History
-        # timePenalty = 1 - History.shape[0]/50
-        if winner == 1:  # blue is winner- AI is winner
-            train_game(history=antiHistory, model=ai_model, score=0)
-            train_game(history=History, model=ai_model, score=1)
-        if winner == -1:  # red, user is winner
-            train_game(history=antiHistory, model=ai_model, score=1)
-            train_game(history=History, model=ai_model, score=0)
-        if winner == 0:
-            train_game(history=antiHistory, model=ai_model, score=.5)
-
-    time.sleep(.001)
+    time.sleep(.003)
 
     return winner, turn
 
 
 def locate(lname: str, version: str):
-    return 'saves/'+version+'/'+lname+'_connect4_'+version+'.h5'
+    return 'saves/'+lname+'/'+lname+'_connect4_'+version+'.h5'
 
+
+def give_report(trained_wins, control_wins, ties):
+    growth_factor = trained_wins / control_wins
+    CRITICAL_Z = 1.96  # 95% confidence
+    marginal_error = CRITICAL_Z * math.sqrt(.25 / (trained_wins + control_wins))
+    print('\nResults----------------------------------------')
+    print('TOTAL SAMPLE GAMES: ' + str(trained_wins+control_wins+ties))
+    print('\t| trained_wins\t| control_wins\t| ties')
+    print('\t|\t' + str(trained_wins) + '\t\t\t|\t ' + str(control_wins) + '\t\t\t|\t ' + str(ties))
+    print('IMPROVEMENT_FACTOR: ' + str(round(growth_factor, 3)))
+    print('PERFORMANCE_CHANGE: ' + str(round((growth_factor - 1) * 100, 1)) + '%')
+    print('SAMPLE_INDUCED_MAX_MARGINAL_ERROR: +/- ' + str(round(100 * marginal_error, 1)) + '%\n\t*at 95% confidence')
+    print('-------------------------------------------------\n')
 
 # ------------------------------------------------------------------------------------------------------ #
 
 # RED: -1, BLUE: 1
 
-FIRST_TIME = False            # default: FALSE
-SAVE = False                  # default: TRUE
-USE_OLD_EVAL = True         # default: FALSE
-REVERT_TO_CONTROL = False    # default: FALSE
+MODEL_CONSTRUCTOR = more_dense_sigs_model
+
+FIRST_TIME = True            # default: FALSE
+SAVE = True                  # default: TRUE
 
 CHOICE_CORRECT = True
 RANDOM_START = True
-RANDOM_FUZZ = 0.0
+SNAPSHOT_DELTA = 1000
+EVAL_DELTA = 100
 
-TRAIN_COUNT = 000
-EVAL_COUNT = 00
-TEST_COUNT = 0
-PLAY_COUNT = 10
+TRAIN_COUNT = 1001
+PLAY_COUNT = 0
+COMPETE_COUNT = 0
 
-TEST_SPEED = .3
 PLAY_SPEED = .4
-VERSION = 'NoActive'
 
-players = {
+NAME = 'HAL'
 
-}
+# make sure the name we want has a directory for it
+if SAVE:
+    if not os.path.exists('saves/'+NAME):
+        os.makedirs('saves/'+NAME)
 
-control_players = {}
-
-
-
+X_Snapshots = []
 if FIRST_TIME:
-    for name in players.keys():
-        players[name] = build_model()
-        control_players[name] = build_model()
+    X_Model = MODEL_CONSTRUCTOR()  # make a new model with the set constructor
+    X_Snapshots.append(MODEL_CONSTRUCTOR())
+    if SAVE:
+        X_Model.save(locate(NAME, 'MAIN'))
+        X_Model.save(locate(NAME, str(len(X_Snapshots) - 1)))
 else:
-    for name in players.keys():
-        if REVERT_TO_CONTROL:
-            players[name] = keras.models.load_model(locate('control_'+name, VERSION))
-        else:
-            players[name] = keras.models.load_model(locate(name, VERSION))
-        if USE_OLD_EVAL:
-            control_players[name] = keras.models.load_model(locate('control_'+name, VERSION))
-        else:
-            control_players[name] = keras.models.load_model(locate(name, VERSION))
+    X_Model = keras.models.load_model(locate(NAME, 'MAIN')) # if not, get the main model saved to memory
+    total_snapshots = len(os.listdir('saves/' + NAME)) - 1  # need total snapshots
+    for n in range(total_snapshots):
+        snapshotModel = keras.models.load_model(locate(NAME, str(n)))
+        X_Snapshots.append(snapshotModel)
 
+X_Player = ModelPlayer(name=NAME,  model=X_Model, is_training=True, choice_correct=CHOICE_CORRECT)  # create a model player with the main model
+User_Player = UserPlayer('User')
 
 if TRAIN_COUNT > 0:
-    for n in range(TRAIN_COUNT):
-
-        red_player, red_model = rand.choice(list(players.items()))
-        blue_player, blue_model = rand.choice(list(players.items()))
-
-        names = {-1: red_player, 0: 'tie\t', 1: blue_player}
-
-        print(str(n) + ': ' + red_player + ' vs. ' + blue_player)
-
-        gwinner, turns = play_game_self(red_model, blue_model, 0, rand_start=RANDOM_START, rand_fuzz=RANDOM_FUZZ)
-        print('\tWinner: '+names[gwinner]+'\t\t'+'Turns: '+str(turns))
-
-        if n % 20 == 0:
-            if SAVE:
-                for player, player_model in players.items():
-                    player_model.save(locate(player, VERSION))
-                print('saving...')
-
-
-if SAVE:
-    for player, player_model in players.items():
-        player_model.save(locate(player, VERSION))
-    print('all models saved to memory')
-
-
-if EVAL_COUNT > 0:
-    control_wins = 0
+    snapped_wins = 0
     trained_wins = 0
     ties = 0
-    for n in range(EVAL_COUNT):
+    win_record = []
+    first_half_wins = 0
+    second_half_wins = 0
+    first_half_losses = 0
+    second_half_losses = 0
 
-        trained_player, trained_model = rand.choice(list(players.items()))
-        control_player, control_model = rand.choice(list(control_players.items()))
-        trained_player = 't:'+trained_player
-        control_player = 'c:'+control_player
+    for n in range(TRAIN_COUNT):
+        snapChoice = math.floor(rand.random()*len(X_Snapshots))
+        SNAPPED_PLAYER = ModelPlayer(name=str(snapChoice), model=X_Snapshots[snapChoice], is_training=False, choice_correct=CHOICE_CORRECT)
+
         if rand.random() > .5:
-            names = {-1: trained_player, 0: 'tie\t', 1: control_player}
-            red_model = trained_model
-            blue_model = control_model
+            RED_PLAYER = X_Player
+            BLUE_PLAYER = SNAPPED_PLAYER
         else:
-            names = {1: trained_player, 0: 'tie\t', -1: control_player}
-            blue_model = trained_model
-            red_model = control_model
-        print('eval - '+str(n) + ': ' + names[-1] + ' vs. ' + names[1])
-        gwinner, turns = play_game_self(red_model, blue_model, 0, training=False, show=False)
-        print('\tWinner: '+names[gwinner]+'\t\t'+'Turns: '+str(turns))
-        if names[gwinner] == trained_player:
+            RED_PLAYER = SNAPPED_PLAYER
+            BLUE_PLAYER = X_Player
+
+        names = {-1: RED_PLAYER.name, 0: 'tie', 1: BLUE_PLAYER.name}
+
+        gwinner, turns = play_game(RED_PLAYER, BLUE_PLAYER, 0, rand_start=RANDOM_START, training=True)
+        print(str(n) + ':\t' + names[-1] + '\tvs.\t' + names[1]+'\t\t\tWinner: '+names[gwinner]+'\t\t\t'+'Turns: '+str(turns))
+
+        if names[gwinner] == X_Player.name:
             trained_wins += 1
-        if names[gwinner] == control_player:
-            control_wins += 1
+            win_record.append(1)
+            if n % SNAPSHOT_DELTA / SNAPSHOT_DELTA < .5:
+                first_half_wins += 1
+            else:
+                second_half_wins += 1
+        if names[gwinner] == SNAPPED_PLAYER.name:
+            snapped_wins += 1
+            win_record.append(-1)
+            if n % SNAPSHOT_DELTA / SNAPSHOT_DELTA < .5:
+                first_half_losses += 1
+            else:
+                second_half_losses += 1
         if gwinner == 0:
             ties += 1
+            win_record.append(0)
 
-    growth_factor = trained_wins / control_wins
-    CRITICAL_Z = 1.96  # 95% confidence
-    marginal_error = CRITICAL_Z * math.sqrt(.25/(trained_wins+control_wins))
-    print('\nResults----------------------------------------')
-    print('TOTAL EVAL GAMES: '+str(EVAL_COUNT))
-    print('\t| trained_wins\t| control_wins\t| ties')
-    print('\t|\t'+str(trained_wins)+'\t\t\t|\t '+str(control_wins)+'\t\t\t|\t '+str(ties))
-    print('IMPROVEMENT_FACTOR: '+str(round(growth_factor, 3)))
-    print('PERFORMANCE_CHANGE: ' + str(round((growth_factor-1) * 100, 1)) + '%')
-    print('SAMPLE_INDUCED_MAX_MARGINAL_ERROR: +/- '+str(round(100*marginal_error, 1))+'%\n\t*at 95% confidence')
-    print('-------------------------------------------------\n')
+        if SAVE and n % 20 == 0:
+            X_Model.save(locate(NAME, 'MAIN'))
+            print('saving...')
 
-if TEST_COUNT > 0:
-    for n in range(TEST_COUNT):
+        if n % SNAPSHOT_DELTA == 0 and n != 0 and False:
+            X_Snapshots.append(keras.models.clone_model(X_Model))
+            if SAVE:
+                X_Model.save(locate(NAME, 'MAIN'))
+                X_Model.save(locate(NAME, str(len(X_Snapshots)-1)))
+                print('saving...')
 
-        red_player, red_model = rand.choice(list(players.items()))
-        blue_player, blue_model = rand.choice(list(players.items()))
+        if n % EVAL_DELTA == 0 and n != 0:
+            give_report(trained_wins, snapped_wins, ties)
+            print(f'win/loss first half: {first_half_wins} / {first_half_losses}')
+            print(f'win/loss second half: {second_half_wins} / {second_half_losses}')
 
-        names = {-1: red_player, 0: 'tie', 1: blue_player}
+            first_half_losses = 0
+            first_half_wins = 0
+            second_half_losses = 0
+            second_half_wins = 0
+            snapped_wins = 0
+            trained_wins = 0
+            ties = 0
 
-        print('test - '+str(n) + ': ' + red_player + ' vs ' + blue_player)
-
-        gwinner, turns = play_game_self(red_model, blue_model, TEST_SPEED, show=True, training=True)
-        print('\tWinner: '+names[gwinner]+'\t\t'+'Turns: '+str(turns))
+            if (trained_wins > 90):
+                print('YAY. We have over 90 wins! Time to stop now!')
+                break
 
 
 if SAVE:
-    for player, player_model in players.items():
-        player_model.save(locate(player, VERSION))
-    for c_player, c_model in control_players.items():
-        c_model.save(locate('control_'+c_player, VERSION))
+
     print('all models saved to memory')
-
-
-if PLAY_COUNT > 0:
-    for n in range(PLAY_COUNT):
-
-        red_player, red_model = rand.choice(list(players.items()))
-
-        if rand.random() > .5:
-            names = {-1: red_player, 0: 'tie', 1: 'User'}
-            print('test - ' + str(n) + ': ' + red_player + ' vs User')
-            gwinner, turns = play_blue_person(red_model, 1, show=True, training=False)
-        else:
-            names = {1: red_player, 0: 'tie', -1: 'User'}
-            print('test - ' + str(n) + ': User vs. ' + red_player)
-            gwinner, turns = play_red_person(red_model, 1, show=True, training=False)
-        print('\tWinner: '+names[gwinner]+'\t\t'+'Turns: '+str(turns))
-
-
-
 
 
 

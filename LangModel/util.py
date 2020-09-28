@@ -18,51 +18,29 @@ def save_all(directory):
     pass
 
 
-
-
 # creation
 def rand_string(n=16, letters='abcdefghijklmnopqrstuvwxyz0123456789'):
     key = ''.join(random.choice(letters) for i in range(n))
     return key
 
 
-def converging_dnn_model():
-    model = tf.keras.Sequential([
-        tf.keras.layers.Flatten(shape=[128, 2]),
-        tf.keras.layers.Dense(128, activation=tf.keras.activations.sigmoid),  # input layer
-        tf.keras.layers.Dense(128, activation=tf.keras.activations.sigmoid),  # hidden layer
-        tf.keras.layers.Dense(128, activation=tf.keras.activations.sigmoid)  # output layer (4)
-    ])
-    return model
+# utility classes
 
+class Device:
+    def __init__(self, assigned_designation, record=False, has_in=True, has_out=True):
+        self.designation = assigned_designation
+        self.record = record
+        self.has_in = has_in
+        self.has_out = has_out
 
-def flat_dnn_model():
-    model = tf.keras.Sequential([
-        tf.keras.layers.Dense(128, activation=tf.keras.activations.sigmoid),  # input layer
-        tf.keras.layers.Dense(128, activation=tf.keras.activations.sigmoid),  # hidden layer
-        tf.keras.layers.Dense(128, activation=tf.keras.activations.sigmoid)  # output layer (4)
-    ])
-    return model
+    def get(self):
+        pass
 
+    def set(self, arg):
+        pass
 
-def diverging_dnn_model():
-    model = tf.keras.Sequential([
-        tf.keras.layers.Dense(128, activation=tf.keras.activations.sigmoid),  # input layer
-        tf.keras.layers.Dense(128, activation=tf.keras.activations.sigmoid),  # hidden layer
-        tf.keras.layers.Dense(128, activation=tf.keras.activations.sigmoid)  # output layer (4)
-    ])
-    return model
-
-
-def stems(n=64):
-    methods = {}
-    for i in range(n):
-        methods[rand_string()] = converging_dnn_model()
-    for i in range(n):
-        methods[rand_string()] = flat_dnn_model()
-    for i in range(n):
-        methods[rand_string()] = diverging_dnn_model()
-    return methods
-
-        
-
+    def register(self, inputs, outputs):
+        if self.has_in:
+            inputs[self.designation] = self
+        if self.has_out:
+            inputs[self.designation] = self

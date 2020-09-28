@@ -14,5 +14,8 @@
     <orderEntry type="jdk" jdkName="Python 3.8 (2)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="andrew" />
+    <orderEntry type="module" module-name="andrew" />
+    <orderEntry type="module" module-name="andrew" />
+    <orderEntry type="module" module-name="Python for Stats" />
   </component>
 </module>
