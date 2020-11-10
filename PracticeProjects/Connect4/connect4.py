@@ -57,7 +57,7 @@ def more_dense_sigs_model():
         keras.layers.Dense(60, activation='sigmoid'),
         keras.layers.Dense(1, activation='sigmoid')
     ])
-    model.compile(optimizer='adam', loss='binary_crossentropy')
+    model.compile(optimizer='adam', loss=keras.losses.KLDivergence())
     # model.build(input_shape=(WIDTH+6, HEIGHT, 2))
     print(model.summary())
     # print(model.layers[1].get_weights())
@@ -302,124 +302,127 @@ def give_report(trained_wins, control_wins, ties):
 
 # ------------------------------------------------------------------------------------------------------ #
 
+
 # RED: -1, BLUE: 1
 
-MODEL_CONSTRUCTOR = more_dense_sigs_model
+if __name__ == '__main__':
 
-FIRST_TIME = True            # default: FALSE
-SAVE = True                  # default: TRUE
+    MODEL_CONSTRUCTOR = more_dense_sigs_model
 
-CHOICE_CORRECT = True
-RANDOM_START = True
-SNAPSHOT_DELTA = 1000
-EVAL_DELTA = 100
+    FIRST_TIME = True            # default: FALSE
+    SAVE = True                  # default: TRUE
 
-TRAIN_COUNT = 1001
-PLAY_COUNT = 0
-COMPETE_COUNT = 0
+    CHOICE_CORRECT = True
+    RANDOM_START = True
+    SNAPSHOT_DELTA = 1000
+    EVAL_DELTA = 100
 
-PLAY_SPEED = .4
+    TRAIN_COUNT = 1001
+    PLAY_COUNT = 0
+    COMPETE_COUNT = 0
 
-NAME = 'HAL'
+    PLAY_SPEED = .4
 
-# make sure the name we want has a directory for it
-if SAVE:
-    if not os.path.exists('saves/'+NAME):
-        os.makedirs('saves/'+NAME)
+    NAME = 'HAL'
 
-X_Snapshots = []
-if FIRST_TIME:
-    X_Model = MODEL_CONSTRUCTOR()  # make a new model with the set constructor
-    X_Snapshots.append(MODEL_CONSTRUCTOR())
+    # make sure the name we want has a directory for it
     if SAVE:
-        X_Model.save(locate(NAME, 'MAIN'))
-        X_Model.save(locate(NAME, str(len(X_Snapshots) - 1)))
-else:
-    X_Model = keras.models.load_model(locate(NAME, 'MAIN')) # if not, get the main model saved to memory
-    total_snapshots = len(os.listdir('saves/' + NAME)) - 1  # need total snapshots
-    for n in range(total_snapshots):
-        snapshotModel = keras.models.load_model(locate(NAME, str(n)))
-        X_Snapshots.append(snapshotModel)
+        if not os.path.exists('saves/'+NAME):
+            os.makedirs('saves/'+NAME)
 
-X_Player = ModelPlayer(name=NAME,  model=X_Model, is_training=True, choice_correct=CHOICE_CORRECT)  # create a model player with the main model
-User_Player = UserPlayer('User')
-
-if TRAIN_COUNT > 0:
-    snapped_wins = 0
-    trained_wins = 0
-    ties = 0
-    win_record = []
-    first_half_wins = 0
-    second_half_wins = 0
-    first_half_losses = 0
-    second_half_losses = 0
-
-    for n in range(TRAIN_COUNT):
-        snapChoice = math.floor(rand.random()*len(X_Snapshots))
-        SNAPPED_PLAYER = ModelPlayer(name=str(snapChoice), model=X_Snapshots[snapChoice], is_training=False, choice_correct=CHOICE_CORRECT)
-
-        if rand.random() > .5:
-            RED_PLAYER = X_Player
-            BLUE_PLAYER = SNAPPED_PLAYER
-        else:
-            RED_PLAYER = SNAPPED_PLAYER
-            BLUE_PLAYER = X_Player
-
-        names = {-1: RED_PLAYER.name, 0: 'tie', 1: BLUE_PLAYER.name}
-
-        gwinner, turns = play_game(RED_PLAYER, BLUE_PLAYER, 0, rand_start=RANDOM_START, training=True)
-        print(str(n) + ':\t' + names[-1] + '\tvs.\t' + names[1]+'\t\t\tWinner: '+names[gwinner]+'\t\t\t'+'Turns: '+str(turns))
-
-        if names[gwinner] == X_Player.name:
-            trained_wins += 1
-            win_record.append(1)
-            if n % SNAPSHOT_DELTA / SNAPSHOT_DELTA < .5:
-                first_half_wins += 1
-            else:
-                second_half_wins += 1
-        if names[gwinner] == SNAPPED_PLAYER.name:
-            snapped_wins += 1
-            win_record.append(-1)
-            if n % SNAPSHOT_DELTA / SNAPSHOT_DELTA < .5:
-                first_half_losses += 1
-            else:
-                second_half_losses += 1
-        if gwinner == 0:
-            ties += 1
-            win_record.append(0)
-
-        if SAVE and n % 20 == 0:
+    X_Snapshots = []
+    if FIRST_TIME:
+        X_Model = MODEL_CONSTRUCTOR()  # make a new model with the set constructor
+        X_Snapshots.append(MODEL_CONSTRUCTOR())
+        if SAVE:
             X_Model.save(locate(NAME, 'MAIN'))
-            print('saving...')
+            X_Model.save(locate(NAME, str(len(X_Snapshots) - 1)))
+    else:
+        X_Model = keras.models.load_model(locate(NAME, 'MAIN')) # if not, get the main model saved to memory
+        total_snapshots = len(os.listdir('saves/' + NAME)) - 1  # need total snapshots
+        for n in range(total_snapshots):
+            snapshotModel = keras.models.load_model(locate(NAME, str(n)))
+            X_Snapshots.append(snapshotModel)
 
-        if n % SNAPSHOT_DELTA == 0 and n != 0 and False:
-            X_Snapshots.append(keras.models.clone_model(X_Model))
-            if SAVE:
+    X_Player = ModelPlayer(name=NAME,  model=X_Model, is_training=True, choice_correct=CHOICE_CORRECT)  # create a model player with the main model
+    User_Player = UserPlayer('User')
+
+    if TRAIN_COUNT > 0:
+        snapped_wins = 0
+        trained_wins = 0
+        ties = 0
+        win_record = []
+        first_half_wins = 0
+        second_half_wins = 0
+        first_half_losses = 0
+        second_half_losses = 0
+
+        for n in range(TRAIN_COUNT):
+            snapChoice = math.floor(rand.random()*len(X_Snapshots))
+            SNAPPED_PLAYER = ModelPlayer(name=str(snapChoice), model=X_Snapshots[snapChoice], is_training=False, choice_correct=CHOICE_CORRECT)
+
+            if rand.random() > .5:
+                RED_PLAYER = X_Player
+                BLUE_PLAYER = SNAPPED_PLAYER
+            else:
+                RED_PLAYER = SNAPPED_PLAYER
+                BLUE_PLAYER = X_Player
+
+            names = {-1: RED_PLAYER.name, 0: 'tie', 1: BLUE_PLAYER.name}
+
+            gwinner, turns = play_game(RED_PLAYER, BLUE_PLAYER, 0, rand_start=RANDOM_START, training=True)
+            print(str(n) + ':\t' + names[-1] + '\tvs.\t' + names[1]+'\t\t\tWinner: '+names[gwinner]+'\t\t\t'+'Turns: '+str(turns))
+
+            if names[gwinner] == X_Player.name:
+                trained_wins += 1
+                win_record.append(1)
+                if n % SNAPSHOT_DELTA / SNAPSHOT_DELTA < .5:
+                    first_half_wins += 1
+                else:
+                    second_half_wins += 1
+            if names[gwinner] == SNAPPED_PLAYER.name:
+                snapped_wins += 1
+                win_record.append(-1)
+                if n % SNAPSHOT_DELTA / SNAPSHOT_DELTA < .5:
+                    first_half_losses += 1
+                else:
+                    second_half_losses += 1
+            if gwinner == 0:
+                ties += 1
+                win_record.append(0)
+
+            if SAVE and n % 20 == 0:
                 X_Model.save(locate(NAME, 'MAIN'))
-                X_Model.save(locate(NAME, str(len(X_Snapshots)-1)))
                 print('saving...')
 
-        if n % EVAL_DELTA == 0 and n != 0:
-            give_report(trained_wins, snapped_wins, ties)
-            print(f'win/loss first half: {first_half_wins} / {first_half_losses}')
-            print(f'win/loss second half: {second_half_wins} / {second_half_losses}')
+            if n % SNAPSHOT_DELTA == 0 and n != 0 and False:
+                X_Snapshots.append(keras.models.clone_model(X_Model))
+                if SAVE:
+                    X_Model.save(locate(NAME, 'MAIN'))
+                    X_Model.save(locate(NAME, str(len(X_Snapshots)-1)))
+                    print('saving...')
 
-            first_half_losses = 0
-            first_half_wins = 0
-            second_half_losses = 0
-            second_half_wins = 0
-            snapped_wins = 0
-            trained_wins = 0
-            ties = 0
+            if n % EVAL_DELTA == 0 and n != 0:
+                give_report(trained_wins, snapped_wins, ties)
+                print(f'win/loss first half: {first_half_wins} / {first_half_losses}')
+                print(f'win/loss second half: {second_half_wins} / {second_half_losses}')
 
-            if (trained_wins > 90):
-                print('YAY. We have over 90 wins! Time to stop now!')
-                break
+                first_half_losses = 0
+                first_half_wins = 0
+                second_half_losses = 0
+                second_half_wins = 0
+                snapped_wins = 0
+                trained_wins = 0
+                ties = 0
+
+                if (trained_wins > 90):
+                    print('YAY. We have over 90 wins! Time to stop now!')
+                    break
 
 
-if SAVE:
+    if SAVE:
 
-    print('all models saved to memory')
+        print('all models saved to memory')
 
 
 

@@ -2,40 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5cb5b4c-d843-449d-8459-25fd2312161a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/LangModel/IO/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TFliteAcceleratorTest/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PracticeProjects/Connect4/PerfictConnect4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../andrew/.idea/andrew.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../andrew/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../andrew/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../andrew/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/AI-sandbox.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AI-sandbox.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LangModel/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/LangModel/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LangModel/objects.py" beforeDir="false" afterPath="$PROJECT_DIR$/LangModel/objects.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LangModel/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/LangModel/util.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/connect4.py" beforeDir="false" afterPath="$PROJECT_DIR$/PracticeProjects/Connect4/connect4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/NoActive/AI-1_connect4_NoActive.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/NoActive/AI-2_connect4_NoActive.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/NoActive/AI-3_connect4_NoActive.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/NoActive/AI-4_connect4_NoActive.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/NoActive/AI-5_connect4_NoActive.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/NoActive/control_AI-1_connect4_NoActive.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/NoActive/control_AI-2_connect4_NoActive.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/NoActive/control_AI-3_connect4_NoActive.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/NoActive/control_AI-4_connect4_NoActive.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/NoActive/control_AI-5_connect4_NoActive.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/set_0/AI-1_connect4_set_0.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/set_0/AI-2_connect4_set_0.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/set_0/AI-3_connect4_set_0.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/set_0/AI-4_connect4_set_0.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/set_0/AI-5_connect4_set_0.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/set_0/control_AI-1_connect4_set_0.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/set_0/control_AI-2_connect4_set_0.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/set_0/control_AI-3_connect4_set_0.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/set_0/control_AI-4_connect4_set_0.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/set_0/control_AI-5_connect4_set_0.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/PracticeProjects/Connect4/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../andrew/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../andrew/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../andrew/AndrewPi/main_init.py" beforeDir="false" afterPath="$PROJECT_DIR$/../andrew/AndrewPi/main_init.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/HAL/HAL_connect4_0.h5" beforeDir="false" afterPath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/HAL/HAL_connect4_0.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/HAL/HAL_connect4_MAIN.h5" beforeDir="false" afterPath="$PROJECT_DIR$/PracticeProjects/Connect4/saves/HAL/HAL_connect4_MAIN.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../andrew/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../andrew/arduino code/BasicWalk/BasicWalk.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../andrew/arduino code/gyro_test/gyro_test.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../andrew/arduino code/main/main.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../andrew/arduino code/servo_test/servo_test.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../andrew/servo numbering.xlsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,20 +66,20 @@
       <recent name="C:\Users\CSmith\Documents\GitHub\AI-sandbox\project2\Connect4\saves\bipred_3" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.stats">
-    <configuration name="boxplot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Python for Stats" />
+  <component name="RunManager" selected="Python.connect4 (1)">
+    <configuration name="PerfictConnect4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AI-sandbox" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop/School/P4)        AP Statistics/Python for Stats" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PracticeProjects/Connect4" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/School/P4)        AP Statistics/Python for Stats/boxplot.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PracticeProjects/Connect4/PerfictConnect4.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -118,27 +101,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PracticeProjects/Connect4/connect4.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="connect4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="AI-sandbox" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/project2/Connect4" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/project2/Connect4/connect4.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -191,11 +153,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.stats" />
-        <item itemvalue="Python.boxplot" />
         <item itemvalue="Python.connect4 (1)" />
+        <item itemvalue="Python.PerfictConnect4" />
+        <item itemvalue="Python.stats" />
         <item itemvalue="Python.test (1)" />
-        <item itemvalue="Python.connect4" />
       </list>
     </recent_temporary>
   </component>
@@ -356,30 +317,34 @@
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1599689657186" />
     <state x="2552" y="147" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599832051800" />
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1595984543548" />
-    <state width="958" height="983" key="GridCell.Tab.0.bottom" timestamp="1601323816359">
+    <state width="958" height="983" key="GridCell.Tab.0.bottom" timestamp="1603291388277">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="984" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1600392769913" />
-    <state width="958" height="983" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601323816359" />
-    <state width="1119" height="983" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1601004268624" />
-    <state width="958" height="983" key="GridCell.Tab.0.center" timestamp="1601323816359">
+    <state width="952" height="980" key="GridCell.Tab.0.bottom/0.0.1280.639/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601405932906" />
+    <state width="952" height="980" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1601393808066" />
+    <state width="958" height="983" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603291388277" />
+    <state width="1213" height="980" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1601436798516" />
+    <state width="958" height="983" key="GridCell.Tab.0.center" timestamp="1603291388277">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="984" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1600392769913" />
-    <state width="958" height="983" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601323816359" />
-    <state width="1119" height="983" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1601004268624" />
-    <state width="958" height="983" key="GridCell.Tab.0.left" timestamp="1601323816359">
+    <state width="952" height="980" key="GridCell.Tab.0.center/0.0.1280.639/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601405932906" />
+    <state width="952" height="980" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1601393808066" />
+    <state width="958" height="983" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603291388277" />
+    <state width="1213" height="980" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1601436798500" />
+    <state width="958" height="983" key="GridCell.Tab.0.left" timestamp="1603291388276">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="984" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1600392769913" />
-    <state width="958" height="983" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601323816359" />
-    <state width="1119" height="983" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1601004268624" />
-    <state width="958" height="983" key="GridCell.Tab.0.right" timestamp="1601323816359">
+    <state width="952" height="980" key="GridCell.Tab.0.left/0.0.1280.639/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601405932906" />
+    <state width="952" height="980" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1601393808066" />
+    <state width="958" height="983" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603291388276" />
+    <state width="1213" height="980" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1601436798500" />
+    <state width="958" height="983" key="GridCell.Tab.0.right" timestamp="1603291388277">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="984" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1600392769913" />
-    <state width="958" height="983" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601323816359" />
-    <state width="1119" height="983" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1601004268624" />
+    <state width="952" height="980" key="GridCell.Tab.0.right/0.0.1280.639/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601405932906" />
+    <state width="952" height="980" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1601393808066" />
+    <state width="958" height="983" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603291388277" />
+    <state width="1213" height="980" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1601436798500" />
     <state width="1259" height="204" key="GridCell.Tab.1.bottom" timestamp="1598486815378">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
