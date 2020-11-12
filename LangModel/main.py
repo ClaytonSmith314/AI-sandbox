@@ -6,7 +6,6 @@ import numpy as np
 # vars
 running = False
 MEMORY_DIR = 'project2/LangModel/memory'
-BASE_SIZE = 128
 
 # static data structures
 input_devices = {}
