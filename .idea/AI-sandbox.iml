@@ -7,8 +7,10 @@
       <sourceFolder url="file://$MODULE_DIR$/project2/LangModel" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/project2/practiceExamples" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/LangModel" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/PracticeProjects/Connect4" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/PracticeProjects/practiceExamples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/KerasProjects/Connect4" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/KerasProjects/practiceExamples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TensorflowBasics" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InferenceValueModel" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.8 (2)" jdkType="Python SDK" />
